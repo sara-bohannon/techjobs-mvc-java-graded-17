@@ -81,7 +81,8 @@ public class TestTaskTwo {
     public void testViewAllLinkExists() throws Exception {
         mockMvc.perform(get("/list"))
                 .andExpect(status().isOk())
-                .andExpect(xpath("//table/tr/td//a[starts-with(@href, '/list/jobs?column=all')]").exists());
+                .andExpect(xpath("//table/tr/td//a[starts-with(@href, '/list" +
+                        "/jobs?column=all')]").exists());
     }
 
 }
