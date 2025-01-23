@@ -36,12 +36,12 @@ public class SearchController {
         if (searchTerm == null || searchTerm.isEmpty() || searchTerm.equalsIgnoreCase("all")) {
             jobs = JobData.findAll();
         } else {
-            jobs = JobData.findByColumnAndValue(searchTerm, searchType);
+            jobs = JobData.findByColumnAndValue(searchType, searchTerm);
         }
         model.addAttribute("jobs", jobs);
         model.addAttribute("columns", columnChoices);
 
-        return "/search/results";
+        return "search";
     }
 }
 
